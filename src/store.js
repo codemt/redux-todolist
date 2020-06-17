@@ -7,15 +7,6 @@ const allReducers = combineReducers({
 })
 const store = createStore(
         allReducers,
-        {
-           todolist:[
-               {
-                id : 1,
-                todo:"Submit Weekly Report",
-                
-                }
-                ]
-        },
         window.devToolsExtension && window.devToolsExtension()
 )
 

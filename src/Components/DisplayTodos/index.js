@@ -3,9 +3,20 @@ import { connect } from 'react-redux'
 import { createTodo } from  '../../actions/todolistActions'
 import Todos from '../Todos';
 import { Link } from 'react-router-dom'
+import { deleteTodo } from '../../actions/deleteTodoActions';
  class DisplayTodos extends Component {
 
 
+
+
+    deleteTodo = (e) => {
+
+        e.preventDefault()
+        const id = e.target.id;
+        this.props.deleteTodo(id)
+
+
+    }
     render() {
             console.log(this.props)
         return (
@@ -13,7 +24,9 @@ import { Link } from 'react-router-dom'
                 <ul>
                     {this.props.todos.map((todo) =>(
                     <div>
-                        <li id={todo.id}>{todo.todo}</li><span><Link to={`/edittodo/${todo.id}`}> edit </Link></span>
+                        <li id={todo.id}>{todo.todo}</li><span>
+                        <Link to={`/edittodo/${todo.id}`}> edit </Link></span>
+                        <button id={todo.id} onClick={this.deleteTodo}> delete </button>
                     </div>    
                     )) }   
                     {/** this.props.todos.map(todo => (
@@ -37,7 +50,8 @@ const MapStateToProps = (state) =>({
 
 const MapDispatchToProps = {
 
-  createNewTodo : createTodo
+  createNewTodo : createTodo,
+  deleteTodo : deleteTodo
 
 }
 

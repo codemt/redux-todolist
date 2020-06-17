@@ -42,10 +42,10 @@ state = {
         )
     }
 }
-const MapStateToProps = (state) =>({
+const MapStateToProps = (state,ownProps) =>({
 
 
-    todos : state.todolist(this.props.match.params.id)
+    todos : state,
 
 
 })

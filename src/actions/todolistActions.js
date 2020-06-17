@@ -1,11 +1,11 @@
-import { TODO } from './types'
+import { ADD_TODO } from './types'
 
 export  function createTodo(newTodo){
 
  
         return{
 
-            type: TODO,
+            type: ADD_TODO,
             payload: {
 
                 todo: newTodo

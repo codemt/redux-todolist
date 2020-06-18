@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createTodo } from  '../../actions/todolistActions'
+import nextId from "react-id-generator";
+ 
  class AddTodo extends Component {
 
 state = {
 
-    id:2,
     todo:''
 
 }
@@ -22,11 +23,11 @@ state = {
     }
     createNewTodo = (e) => {
         
-       
         e.preventDefault()
+        const id = nextId();
         const todo = {
 
-            id : this.state.id++,
+            id : id,
             todo: this.state.todo
 
         }

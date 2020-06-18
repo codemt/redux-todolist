@@ -21,10 +21,23 @@ function todolistReducer(state=todolist,{type,payload}){
                 case EDIT_TODO:
                         console.log('edit todo called')
                         console.log(payload.todo.id)
-                        return state.map(
-                                    (todo, i) => i === 1 ? {...todo, todo: payload.todo.todo}
-                                                            : todo
-                                )
+                        return state.map((item, index) => {
+                                // Find the item with the matching id
+                                if(item.id === payload.todo.id) {
+                                  // Return a new object
+                                  return {
+                                    ...item,  // copy the existing item
+                                    todo: payload.todo.todo // replace the email addr
+                                  }
+                                }
+                            
+                                // Leave every other item unchanged
+                                return item;
+                              });
+                        // return state.map(
+                        //             (todo, i) => i === payload.todo.id ? {...todo, todo: payload.todo.todo}
+                        //                                     : todo
+                        //         )
                              
                                 // Now we know that foo is defined, we are good to go.
                 case DELETE_TODO:

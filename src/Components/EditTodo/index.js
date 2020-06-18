@@ -3,13 +3,18 @@ import { connect } from 'react-redux'
 import { editTodo } from  '../../actions/editTodoActions'
 class EditTodo extends Component {
 
-state = {
+    constructor(props){
 
-    id:this.props.match.params.id,
-    todo:''
+        super(props)
+        this.state = {
 
-}
+            id:this.props.match.params.id,
+            todo:this.props.todo[0].todo
+        
+        }
 
+    }
+    
     onInputChange = (e) => {
 
        const todo = e.target.value;
@@ -26,21 +31,22 @@ state = {
         e.preventDefault()
         const todo = {
 
-            id : this.state.id++,
+            id : this.state.id,
             todo: this.state.todo
 
         }
-        this.props.createNewTodo(todo);
+        this.props.editTodo(todo);
     }
 
     render() {
         const id = this.props.match.params.id
         console.log(this.props.todo)
-        //console.log(this.props.todo[id])
+        console.log(this.props.todo[0].todo)
+       
         return (
             <div>
                 <input className="todo" name="todo" onChange={this.onInputChange} value={this.state.todo} type="text" placeholder="enter todo" /> <br />
-                <button onClick={this.createNewTodo}>Submit </button> 
+                <button onClick={this.editTodo}>Submit </button> 
             </div>
         )
     }

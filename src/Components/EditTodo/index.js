@@ -34,6 +34,9 @@ state = {
     }
 
     render() {
+        const id = this.props.match.params.id
+        console.log(this.props.todo)
+        //console.log(this.props.todo[id])
         return (
             <div>
                 <input className="todo" name="todo" onChange={this.onInputChange} value={this.state.todo} type="text" placeholder="enter todo" /> <br />
@@ -44,9 +47,8 @@ state = {
 }
 const MapStateToProps = (state,ownProps) =>({
 
-
-    todos : state,
-
+    todo : state.todolist.filter((item) => item.id == ownProps.match.params.id)
+    
 
 })
 

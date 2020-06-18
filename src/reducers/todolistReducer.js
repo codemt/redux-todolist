@@ -1,5 +1,5 @@
 import { ADD_TODO,EDIT_TODO, DELETE_TODO } from '../actions/types'
-import update from 'immutability-helper';
+import update from 'immutability-helper'
 const todolist = 
 [
         { id :1, 
@@ -20,13 +20,13 @@ function todolistReducer(state=todolist,{type,payload}){
 
                 case EDIT_TODO:
                         console.log('edit todo called')
-                        let key = payload.todo.id
-                        return update(state, { 
-                                  [key]: {
-                                    todo: {$set: payload.todo.todo}
-                                  }
-                                })
-                                
+                        console.log(payload.todo.id)
+                        return state.map(
+                                    (todo, i) => i === 1 ? {...todo, todo: payload.todo.todo}
+                                                            : todo
+                                )
+                             
+                                // Now we know that foo is defined, we are good to go.
                 case DELETE_TODO:
                         console.log('delete reducer called')
                  return  state.filter((item) => item.id != payload.id)

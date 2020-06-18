@@ -27,8 +27,6 @@ class EditTodo extends Component {
     }
     editTodo = (e) => {
         
-       
-        e.preventDefault()
         const todo = {
 
             id : this.state.id,
@@ -37,7 +35,15 @@ class EditTodo extends Component {
         }
         this.props.editTodo(todo);
     }
+    displayInput = () => {
 
+        const editTodo = () => {
+
+            
+        }
+
+
+    }
     render() {
         const id = this.props.match.params.id
         console.log(this.props.todo)

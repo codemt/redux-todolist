@@ -1,0 +1,22 @@
+.navigation {
+
+    position:absolute;
+    margin:3px;
+    padding:3px;
+    background-color:lightblue;
+    left:25%;
+    width:50%;
+    right:25%;
+}
+.navigation ul{
+
+    list-style-type: none;
+   
+}
+.navItem{
+
+    text-decoration: none;
+    color:black;
+    background-color:lightgreen;
+
+}

@@ -1,0 +1,43 @@
+.displayTodos {
+
+    margin:5px;
+    padding:10px;
+    position: absolute;
+    top:200px;
+    left:400px;
+    
+
+}
+.displayTodos ul{
+
+    list-style-type: square;
+
+}
+.todo{
+
+    display: flex;
+    flex-direction: row;
+ 
+
+}
+.todo li{
+
+    font-size: 25px;
+
+}
+.todo .link{
+
+    margin:10px;
+    padding:10px;
+    font-size: 25px;
+
+}
+.todo button{
+
+    margin-left: 100px;
+    padding:10px;
+    border-radius:5px solid grey;
+    border:5px;
+    font-size: 25px;
+
+}

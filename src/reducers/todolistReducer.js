@@ -2,9 +2,7 @@ import { ADD_TODO,EDIT_TODO, DELETE_TODO } from '../actions/types'
 import update from 'immutability-helper'
 const todolist = 
 [
-        { id :1, 
-        todo:"hello team"
-        }
+       
 ]
 function todolistReducer(state=todolist,{type,payload}){
 

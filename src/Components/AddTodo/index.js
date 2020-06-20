@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import './index.css'
 import { createTodo } from  '../../actions/todolistActions'
 import nextId from "react-id-generator";
  
@@ -36,7 +37,7 @@ state = {
 
     render() {
         return (
-            <div>
+            <div className="addTodo">
                 <input className="todo" name="todo" onChange={this.onInputChange} value={this.state.todo} type="text" placeholder="enter todo" /> <br />
                 <button onClick={this.createNewTodo}>Submit </button> 
             </div>

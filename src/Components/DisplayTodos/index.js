@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createTodo } from  '../../actions/todolistActions'
-import Todos from '../Todos';
+import  './index.css'
 import { Link } from 'react-router-dom'
 import { deleteTodo } from '../../actions/deleteTodoActions';
  class DisplayTodos extends Component {
@@ -20,12 +20,12 @@ import { deleteTodo } from '../../actions/deleteTodoActions';
     render() {
             console.log(this.props)
         return (
-            <div>
+            <div className="displayTodos">
                 <ul>
                     {this.props.todos.map((todo) =>(
-                    <div>
+                    <div class="todo">
                         <li id={todo.id}>{todo.todo}</li><span>
-                        <Link to={`/edittodo/${todo.id}`}> edit </Link></span>
+                        <Link className="link" to={`/edittodo/${todo.id}`}> edit </Link></span>
                         <button id={todo.id} onClick={this.deleteTodo}> delete </button>
                     </div>    
                     )) }   

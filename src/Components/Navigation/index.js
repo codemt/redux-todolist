@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import './index.css'
 export default function Navigation() {
  
         return (
-            <div>
+            <div className="navigation">
                 <ul>
-                    <li> <Link to="/"> Add Todo </Link> </li>
+                    <li> <Link className="navItem" to="/"> Add Todo </Link> </li>
                     
                 </ul>
             </div>

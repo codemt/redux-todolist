@@ -21,20 +21,27 @@ import { deleteTodo } from '../../actions/deleteTodoActions';
             console.log(this.props)
         return (
             <div className="displayTodos">
-                <ul>
+                <table>
+
                     {this.props.todos.map((todo) =>(
-                    <div class="todo">
-                        <li id={todo.id}>{todo.todo}</li><span>
-                        <Link className="link" to={`/edittodo/${todo.id}`}> edit </Link></span>
-                        <button id={todo.id} onClick={this.deleteTodo}> delete </button>
-                    </div>    
+                        <tr>
+                        <td> {todo.todo} </td>
+                        <td><Link className="link" to={`/edittodo/${todo.id}`}> edit </Link> </td>
+                        <td> <button id={todo.id} onClick={this.deleteTodo}> delete </button></td>
+                        </tr>
+                      
                     )) }   
                     {/** this.props.todos.map(todo => (
                         <Todos  {...todo} />
+                         <div class="todo">
+                        <li id={todo.id}>{todo.todo}</li><span>
+                        <Link className="link" to={`/edittodo/${todo.id}`}> edit </Link></span>
+                        <button id={todo.id} onClick={this.deleteTodo}> delete </button>
+                    </div> 
                      
                       )) */ }
                     {/**  this.props.todos.map((item) => { return <Todos {... item}/> }) */}        
-                </ul>
+                </table>
             </div>
         )
     }

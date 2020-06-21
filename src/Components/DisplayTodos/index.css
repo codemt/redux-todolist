@@ -4,8 +4,8 @@
     padding:10px;
     position: absolute;
     top:200px;
-    left:400px;
-    
+    left:260px;
+    width:50%;
 
 }
 .displayTodos ul{
@@ -39,5 +39,33 @@
     border-radius:5px solid grey;
     border:5px;
     font-size: 25px;
+
+}
+.displayTodos table{
+
+    margin:10px;
+    padding:10px;
+    background-color:lightblue;
+    width:100%;
+
+}
+.displayTodos table tr{
+
+
+    margin:5px;
+    padding:5px;
+   
+
+}
+.displayTodos table tr td {
+
+    margin:10px;
+    padding:10px;
+   
+
+}
+.link {
+
+    list-style-type:none;
 
 }

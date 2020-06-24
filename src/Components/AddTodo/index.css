@@ -68,6 +68,12 @@
  /* Large devices (laptops/desktops, 992px and up) */
  @media only screen and (min-width: 992px) {
 
+    .addTodo{
+
+        top:150px;
+        left : 400px;
+
+    }
 
 
 
@@ -76,6 +82,12 @@
  /* Extra large devices (large laptops and desktops, 1200px and up) */
  @media only screen and (min-width: 1200px) {
 
+    .addTodo{
+
+        top:150px;
+        left : 400px;
+
+    }
 
 
 

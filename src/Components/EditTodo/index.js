@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { editTodo } from  '../../actions/editTodoActions'
 import { withRouter } from 'react-router-dom'
+import './index.css'
 class EditTodo extends Component {
 
     constructor(props){
@@ -48,7 +49,7 @@ class EditTodo extends Component {
         const todo = this.state;
        
         return (
-            <div>
+            <div className="editTodo">
                 <input className="todo" name="todo" onChange={this.onInputChange} value={todo.todo} type="text" placeholder="enter todo" /> <br />
                 <button id={todo.id} onClick={this.editTodo}>Submit </button> 
             </div>

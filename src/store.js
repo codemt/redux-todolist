@@ -7,7 +7,7 @@ const allReducers = combineReducers({
 })
 const store = createStore(
         allReducers,
-        window.devToolsExtension && window.devToolsExtension()
+        //window.devToolsExtension && window.devToolsExtension()
 )
 
 console.log(store.getState())
